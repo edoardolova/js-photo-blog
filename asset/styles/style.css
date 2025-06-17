@@ -1,6 +1,6 @@
+@import url("./grid.css");
 /* titles font  */
 @import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400..700&family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap');
-
 /* date font  */
 @import url('https://fonts.googleapis.com/css2?family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap');
 
@@ -8,4 +8,84 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* utility  */
+.d-flex{
+    display: flex;
+}
+
+.container{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mt-1{
+    margin-top: 1rem;
+}
+
+.position-relative{
+    position: relative;
+}
+
+
+/* #region header  */
+#header{
+    background-image: url("../img/wall.png");
+    justify-content: center;
+    padding: 1rem 0;
+
+    h1{
+        font-family: "Sometype Mono", monospace;
+        font-optical-sizing: auto;
+        font-weight: 700;
+        font-size: 4.5rem;
+        font-style: italic;
+        
+    }
+}
+/* #endregion header  */
+
+/* #region main  */
+#main{
+    background-image: url("../img/cork.png");
+    padding: 2rem 0;
+
+    .card{
+        background-color: white;
+        padding: 1.5rem ;
+
+        .card-top{
+            img{
+                width: 100%;
+            }
+
+        }
+
+        .card-text{
+            font-family: "Edu TAS Beginner", cursive;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .pin-img{
+            position: absolute;
+            height: 50px;
+            top: -2%;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+    }
+}
+
+/* #endregion main  */
+
+
+/************* media query ******************/
+
+/* tablet */
+@media screen and (min-width:768px) {
+
 }
