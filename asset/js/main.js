@@ -1,11 +1,16 @@
 // DOM 
 const rowEl = document.getElementById("postsRow");
+const overlayEl = document.getElementById("overlay");
+const btnCloseEl = document.getElementById("btnClose");
+const modalImgEl = document.getElementById("modalImg");
 
 //global variables
 const endPoint= "https://lanciweb.github.io/demo/api/pictures/";
 const posts =[];
 
-
+btnCloseEl.addEventListener("click", ()=>{
+    overlayEl.classList.toggle("d-none");
+})
 
 function getPhotoPost(){
     fetch(endPoint)
@@ -24,25 +29,47 @@ function getPhotoPost(){
 }
 
 function renderPosts(parent, arr){
-    console.log(arr)
-    let postsHtml ="";
     arr.forEach(element => {
-        postsHtml += `
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card position-relative">
-                    <div class="card-top">
-                        <img src=${element.url} alt="photo">
-                    </div>
-                    <div class="card-bottom">
-                        <h2 class="card-title">${element.title}</h2>
-                        <p class="card-date">${element.date}</p>
-                    </div>
-                    <img class="pin-img" src="./asset/img/pin.svg" alt="pin image">
-                </div>
-            </div>
-        `
+        const col = document.createElement("div");
+        col.classList.add("col-12", "col-md-6", "col-lg-4");
+        parent.appendChild(col);
+
+        const card = document.createElement("div");
+        card.classList.add("card", "position-relative");
+        col.appendChild(card);
+
+        const cardTop = document.createElement("div");
+        cardTop.classList.add("card-top");
+        card.appendChild(cardTop);
+        const img = document.createElement("img");
+        img.src = element.url;
+        img.alt = element.title;
+        img.addEventListener("click", ()=>{
+            modalImgEl.src = element.url;
+            overlayEl.classList.toggle("d-none");
+        })
+        cardTop.appendChild(img);
+
+        const cardBottom = document.createElement("div");
+        cardBottom.classList.add("card-bottom");
+        card.appendChild(cardBottom);
+
+        const cardTitle = document.createElement("h2");
+        cardTitle.classList.add("card-title");
+        cardTitle.innerText = element.title;
+        cardBottom.appendChild(cardTitle);
+
+        const cardDate = document.createElement("h2");
+        cardTitle.classList.add("card-date");
+        cardDate.innerText = element.date;
+        cardBottom.appendChild(cardDate);
+
+        const pinImg = document.createElement("img");
+        pinImg.classList.add("pin-img");
+        pinImg.src = "./asset/img/pin.svg";
+        pinImg.alt = "pin image";
+        card.appendChild(pinImg);
     });
-    parent.innerHTML = postsHtml;
 }
 
 getPhotoPost();
