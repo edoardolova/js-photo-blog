@@ -1,0 +1,163 @@
+@import url("./grid.css");
+/* titles font  */
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400..700&family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap');
+/* date font  */
+@import url('https://fonts.googleapis.com/css2?family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("../img/cork.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* utility  */
+.d-flex{
+    display: flex;
+}
+
+.container{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+}
+
+.mt-1{
+    margin-top: 1rem;
+}
+
+.position-relative{
+    position: relative;
+}
+
+
+
+/* general  */
+h1 , h2{
+    font-family: "Edu TAS Beginner", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+/* #region header  */
+#header{
+    background-image: url("../img/wall.png");
+    justify-content: center;
+    padding: 1rem 0;
+
+    h1{
+        font-size: 4.5rem;
+        font-weight: 900;
+    }
+}
+/* #endregion header  */
+
+/* #region main  */
+#main{
+    padding: 2rem 0;
+
+    .card{
+        background-color: white;
+        padding: 1.5rem ;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+        .card-top{
+            img{
+                width: 100%;
+            }
+        }
+        .card-bottom{
+            padding: 0.5rem 0;
+        }
+        .card-title{
+            font-weight: 500;
+            font-size: 1.5rem;
+        }
+        .card-date{
+            margin-top: 0.3rem;
+            font-family: "Sometype Mono", monospace;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .pin-img{
+            position: absolute;
+            height: 50px;
+            top: -2%;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+    }
+
+    .card:hover{
+        cursor: pointer;
+        transform: scale(1.05) rotate(-10deg);
+        box-shadow: rgba(50, 50, 93, 0.651) 0px 50px 100px -20px, rgba(0, 0, 0, 0.629) 0px 30px 60px -30px;
+        z-index: 10;
+    }
+}
+
+/* #endregion main  */
+
+
+
+/* #region modal  */
+.overlay{
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.605);
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .modal{
+        max-width: 600px;
+        .btn-close-container{
+            padding: 0.5rem;
+            width: 100%;
+            display: flex;
+            justify-content: end;
+            .btn-close{
+                height: 35px;
+                width: 35px;
+                border: solid 2px black;
+                border-radius: 10px;
+                font-size: 1.5rem;
+            }
+            :hover{
+                cursor: pointer;
+                background-color: black;
+                color: white;
+            }
+        }
+        .modal-img-container{
+            padding: 0.5rem;
+            .modal-img{
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+    }
+}
+
+/* avoid scrolling class when modal is open  */
+.remove-scrolling { 
+  height: 100%; 
+  overflow: hidden; 
+} 
+/* #endregion modal  */
+
+.d-none{
+    display: none;
+}
+
+/************* media query ******************/
+
