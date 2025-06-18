@@ -10,6 +10,7 @@ const posts =[];
 
 btnCloseEl.addEventListener("click", ()=>{
     overlayEl.classList.toggle("d-none");
+    enableScroll();
 })
 
 function getPhotoPost(){
@@ -37,6 +38,7 @@ function renderPosts(parent, arr){
         const card = document.createElement("div");
         card.classList.add("card", "position-relative");
         card.addEventListener("click", ()=>{
+            disableScroll();
             modalImgEl.src = element.url;
             overlayEl.classList.toggle("d-none");
         })
@@ -73,5 +75,11 @@ function renderPosts(parent, arr){
     });
 }
 
+function disableScroll(){
+    document.body.classList.add("remove-scrolling");
+}
+function enableScroll(){
+    document.body.classList.remove("remove-scrolling");
+}
 getPhotoPost();
 

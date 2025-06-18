@@ -147,6 +147,12 @@ h1 , h2{
         }
     }
 }
+
+/* avoid scrolling class when modal is open  */
+.remove-scrolling { 
+  height: 100%; 
+  overflow: hidden; 
+} 
 /* #endregion modal  */
 
 .d-none{
