@@ -35,6 +35,9 @@ body{
     position: relative;
 }
 
+
+
+/* general  */
 h1 , h2{
     font-family: "Edu TAS Beginner", cursive;
     font-optical-sizing: auto;
@@ -96,6 +99,54 @@ h1 , h2{
 
 /* #endregion main  */
 
+
+
+/* #region modal  */
+.overlay{
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.605);
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .modal{
+        max-width: 600px;
+        .btn-close-container{
+            width: 100%;
+            display: flex;
+            justify-content: end;
+            margin-bottom: 0.5rem;
+            .btn-close{
+                height: 35px;
+                width: 35px;
+                border: solid 2px black;
+                border-radius: 10px;
+                font-size: 1.5rem;
+            }
+            :hover{
+                cursor: pointer;
+                background-color: black;
+                color: white;
+            }
+        }
+        .modal-img-container{
+            .modal-img{
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+    }
+}
+/* #endregion modal  */
+
+.d-none{
+    display: none;
+}
 
 /************* media query ******************/
 

@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./asset/styles/style.css">
     <title>Photo blog</title>
 </head>
@@ -14,11 +16,20 @@
     <!-- #main -->
     <main id="main">
         <div class="container">
-            <div class="row" id="postsRow">
-
-            </div>
+            <div class="row" id="postsRow"></div>
         </div>
     </main>
+    <!-- modal  -->
+     <div class="overlay d-none">
+        <div class="modal">
+            <div class="btn-close-container">
+                <button class="btn-close" id="btnClose"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-img-container">
+                <img class="modal-img" src="./asset/img/wall.png" alt="">
+            </div>
+        </div>
+     </div>
     <!-- #footer -->
     <footer id="footer"></footer>
 
