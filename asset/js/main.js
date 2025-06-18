@@ -36,6 +36,10 @@ function renderPosts(parent, arr){
 
         const card = document.createElement("div");
         card.classList.add("card", "position-relative");
+        card.addEventListener("click", ()=>{
+            modalImgEl.src = element.url;
+            overlayEl.classList.toggle("d-none");
+        })
         col.appendChild(card);
 
         const cardTop = document.createElement("div");
@@ -44,10 +48,7 @@ function renderPosts(parent, arr){
         const img = document.createElement("img");
         img.src = element.url;
         img.alt = element.title;
-        img.addEventListener("click", ()=>{
-            modalImgEl.src = element.url;
-            overlayEl.classList.toggle("d-none");
-        })
+
         cardTop.appendChild(img);
 
         const cardBottom = document.createElement("div");
